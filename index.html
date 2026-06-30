@@ -355,13 +355,24 @@ const CONTACT_EMAIL='hello@visone.com';
   }).join('');
 })();
 
-/* contact -> mailto */
-document.getElementById('contact-form').addEventListener('submit',function(e){
+/* contact -> serverless function (inline, no popup) */
+document.getElementById('contact-form').addEventListener('submit',async function(e){
   e.preventDefault();
   const f=e.target;
-  const subject=encodeURIComponent('Visone — '+f.plan.value+' enquiry ('+(f.company.value||f.name.value)+')');
-  const body=encodeURIComponent('Name: '+f.name.value+'\nEmail: '+f.email.value+'\nCompany: '+f.company.value+'\nPlan: '+f.plan.value+'\n\n'+f.message.value);
-  window.location.href='mailto:'+CONTACT_EMAIL+'?subject='+subject+'&body='+body;
+  const btn=f.querySelector('button[type=submit]');
+  const fd=new FormData(f);
+  const data={name:fd.get('name'),email:fd.get('email'),company:fd.get('company'),plan:fd.get('plan'),message:fd.get('message')};
+  const orig=btn.textContent; btn.disabled=true; btn.textContent='Sending…';
+  try{
+    const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    if(!r.ok) throw new Error('bad status');
+    f.innerHTML='<div class="d" style="font-weight:800;font-size:clamp(1.4rem,5vw,2rem);">Thanks — we\u2019ve got it.</div><p class="b" style="margin-top:10px;font-size:1.05rem;opacity:.95;">We\u2019ll be in touch within a working day.</p>';
+  }catch(err){
+    btn.disabled=false; btn.textContent=orig;
+    let s=document.getElementById('form-error');
+    if(!s){s=document.createElement('p');s.id='form-error';s.className='b';s.style.cssText='margin-top:12px;font-weight:600;color:#fff;';f.appendChild(s);}
+    s.textContent='Something went wrong sending that. Email us directly at '+CONTACT_EMAIL+'.';
+  }
 });
 
 /* ambient orb */
