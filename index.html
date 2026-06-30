@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Visone — Give your business a mind, body & soul</title>
+<meta name="description" content="Visone is the cloud genius engine that connects your company's best thinking and routes the right move to every seat. A mind, body, and soul for your business." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- CONTACT: change hello@visone.com below (search it) to your real email when ready -->
+<style>
+  :root{
+    --ink:#0D0A1F; --ink2:#15102E; --paper:#F4F1FF;
+    --violet:#7B2FF7; --cobalt:#2E2BF5; --magenta:#FF2E92; --tangerine:#FF7A1A; --teal:#00C2B2;
+    /* lighter, readable-on-dark text tints */
+    --violet-t:#B999FF; --cobalt-t:#8AA4FF; --magenta-t:#FF6FB0; --tangerine-t:#FFA85C; --teal-t:#3FE6D4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:var(--ink);color:var(--paper);overflow-x:hidden;}
+  body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  .d{font-family:'Syne',sans-serif;} .b{font-family:'Inter',sans-serif;} .m{font-family:'Space Mono',monospace;letter-spacing:.03em;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  .grad{background:linear-gradient(100deg,#8AA4FF,#FF6FB0,#FFA85C,#B999FF,#8AA4FF);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#B999FF;animation:sh 9s linear infinite;}
+  @keyframes sh{to{background-position:300% 0;}}
+  @keyframes mq{to{transform:translateX(-50%);}}
+  .mq{display:flex;width:max-content;animation:mq 26s linear infinite;}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.shown{opacity:1;transform:none;}
+  .lnk{position:relative;}
+  .lnk::after{content:'';position:absolute;left:0;bottom:-3px;height:2px;width:0;background:currentColor;transition:width .25s;}
+  .lnk:hover::after{width:100%;}
+  .btn{transition:transform .15s ease, box-shadow .15s ease;display:inline-block;}
+  .btn:hover{transform:translateY(-2px);}
+  .card{position:relative;overflow:hidden;border-radius:24px;transition:transform .2s ease;}
+  .card:hover{transform:translateY(-4px);}
+  .cardc{background:color-mix(in srgb, var(--c) 17%, var(--ink2));border-top:5px solid var(--c);}
+  section{padding:80px 0;}
+  h1.hero{font-family:'Syne';font-weight:800;line-height:.88;letter-spacing:-.02em;font-size:clamp(3rem,15vw,10rem);}
+  .eyebrow{font-family:'Space Mono';font-weight:700;font-size:13px;letter-spacing:.06em;}
+  :focus-visible{outline:3px solid var(--violet-t);outline-offset:3px;border-radius:6px;}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:#ffffff2e;width:100%;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--paper);cursor:pointer;box-shadow:0 4px 14px #7B2FF788;}
+  input[type=range]::-moz-range-thumb{width:26px;height:26px;border:none;border-radius:50%;background:var(--paper);cursor:pointer;}
+  input,select,textarea{font-family:'Inter';font-size:16px;width:100%;border-radius:12px;padding:12px 16px;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.38);}
+  ::placeholder{color:#ffffffb0;}
+  textarea{resize:none;}
+  .grid{display:grid;gap:16px;}
+  @media(min-width:640px){.sm2{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:768px){.md3{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:1024px){.lg3{grid-template-columns:repeat(3,1fr);}.lg4{grid-template-columns:repeat(4,1fr);}}
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:50;background:#0D0A1Fe6;backdrop-filter:blur(10px);}
+  .navrow{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;max-width:1120px;margin:0 auto;}
+  .navlinks{display:none;gap:28px;font-size:14px;font-weight:500;}
+  @media(min-width:768px){.navlinks{display:flex;}}
+  .chip{font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid #ffffff3a;opacity:.95;display:inline-block;}
+  .flow{display:flex;flex-direction:column;}
+  @media(min-width:640px){.flow{flex-direction:row;align-items:stretch;}.flowitem{flex:1;}}
+  .arrow{display:flex;align-items:center;justify-content:center;font-family:'Syne';font-weight:800;font-size:20px;opacity:.65;padding:8px 0;}
+  @media(min-width:640px){.arrow{padding:0 4px;}}
+  @media (prefers-reduced-motion: reduce){.grad,.mq{animation:none!important;}.reveal{transition:none;opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top"><div class="navrow">
+  <a href="#top" class="d" style="font-weight:800;font-size:20px;">visone<span style="color:var(--magenta-t)">.</span></a>
+  <div class="navlinks">
+    <a href="#engine" class="lnk">Engine</a>
+    <a href="#disks" class="lnk">Disks &amp; dials</a>
+    <a href="#discovery" class="lnk">Discovery</a>
+    <a href="#plans" class="lnk">Plans</a>
+  </div>
+  <a href="#contact" class="btn d" style="font-weight:700;font-size:14px;padding:10px 20px;border-radius:999px;background:var(--paper);color:var(--ink);">Get in touch</a>
+</div></nav>
+
+<!-- HERO -->
+<section id="top" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:96px;">
+  <div id="orb" style="position:absolute;inset:0;filter:blur(70px);opacity:.5;" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:10;">
+    <p class="eyebrow" style="color:var(--teal-t);margin-bottom:24px;">GIVE YOUR BUSINESS A MIND, BODY &amp; SOUL</p>
+    <h1 class="hero"><span class="grad">VISONE</span></h1>
+    <h2 class="d" style="font-weight:800;margin-top:24px;line-height:1;font-size:clamp(1.9rem,7vw,3.8rem);max-width:15ch;">Genius in <span style="color:var(--magenta-t)">every seat.</span></h2>
+    <p class="b" style="margin-top:20px;font-size:clamp(1rem,2.5vw,1.125rem);max-width:36rem;opacity:.9;">Every person in your company has genius worth hearing. Visone connects it — drawing out the best thinking from every mind, fusing it with the sharpest minds beyond your walls, and handing that shared genius back to everyone, at the right moment. Load it once; the whole company gets smarter.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;">
+      <a href="#contact" class="btn d" style="font-weight:700;padding:14px 28px;border-radius:999px;background:var(--violet);color:#fff;box-shadow:0 12px 36px #7B2FF766;">Start a conversation →</a>
+      <a href="#engine" class="btn d" style="font-weight:700;padding:14px 28px;border-radius:999px;border:2px solid var(--paper);color:var(--paper);">See the engine</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="d" style="background:var(--paper);color:var(--ink);font-weight:800;padding:20px 0;overflow:hidden;user-select:none;font-size:clamp(1.1rem,3.2vw,1.8rem);">
+  <div class="mq" id="mq1"></div>
+</div>
+
+<!-- MANIFESTO -->
+<section><div class="wrap" style="max-width:48rem;">
+  <p class="eyebrow" style="color:var(--teal-t);margin-bottom:24px;">THE IDEA</p>
+  <p class="reveal d" style="font-weight:700;line-height:1.15;font-size:clamp(1.6rem,5vw,2.8rem);">Every company is a collection of smart, capable minds — and every one of them has something to add. <span class="grad">Visone connects them.</span> It draws out the best thinking from every person, fuses it with the sharpest minds beyond your walls, and hands that shared genius back to everyone, at their altitude, the moment it's needed.</p>
+  <p class="reveal b" style="margin-top:24px;line-height:1.55;font-size:clamp(1.05rem,2.6vw,1.3rem);opacity:.9;">It's chemistry and extraction — the brilliance is already in your people. No one goes mindless following a script; everyone gets smarter. The company stops being scattered and becomes connected, unified, more capable. Every person has a voice — and Visone makes sure it's heard.</p>
+  <p class="reveal d" style="font-weight:800;margin-top:32px;font-size:clamp(1.2rem,4vw,1.8rem);">Not data. Direction. Not a tool. An edge.</p>
+</div></section>
+
+<!-- MIND BODY SOUL -->
+<section style="background:var(--ink2);"><div class="wrap">
+  <p class="eyebrow" style="color:var(--violet-t);margin-bottom:12px;">WHAT VISONE GIVES YOU</p>
+  <h2 class="reveal d" style="font-weight:800;line-height:.98;margin-bottom:48px;font-size:clamp(2.2rem,7vw,4.4rem);">A mind, a body,<br>and a soul.</h2>
+  <div class="grid md3" id="mbs"></div>
+</div></section>
+
+<!-- ENGINE / SPINE -->
+<section id="engine"><div class="wrap">
+  <p class="eyebrow" style="color:var(--cobalt-t);margin-bottom:12px;">THE ENGINE</p>
+  <h2 class="reveal d" style="font-weight:800;line-height:.98;margin-bottom:16px;font-size:clamp(2.2rem,7vw,4.4rem);">One brain. Every seat.</h2>
+  <p class="reveal b" style="margin-bottom:48px;font-size:1.125rem;opacity:.86;max-width:48ch;">Connect by API to any system or AI. The brain holds your knowledge, watches your reality, and drives the response.</p>
+  <div class="flow" id="spine"></div>
+</div></section>
+
+<!-- DISKS -->
+<section id="disks"><div class="wrap">
+  <p class="eyebrow" style="color:var(--magenta-t);margin-bottom:12px;">LOAD THE DISKS</p>
+  <h2 class="reveal d" style="font-weight:800;line-height:.98;margin-bottom:12px;font-size:clamp(2.2rem,7vw,4.4rem);">Anything your best people know,<br>loaded once — used everywhere.</h2>
+  <p class="reveal b" style="margin-bottom:48px;font-size:1.125rem;opacity:.86;max-width:46ch;">A disk is a loadable capability. Slot it in, and every seat — or every connected AI — can run it.</p>
+  <div class="grid sm2 lg3" id="disks-grid"></div>
+  <p class="reveal eyebrow" style="margin:40px 0 12px;opacity:.85;">…AND MORE</p>
+  <div class="reveal" id="more-disks" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+</div></section>
+
+<!-- DIALS -->
+<section style="background:var(--ink2);"><div class="wrap" style="max-width:48rem;">
+  <p class="eyebrow" style="color:var(--tangerine-t);margin-bottom:12px;">SET THE DIALS</p>
+  <h2 class="reveal d" style="font-weight:800;line-height:.98;margin-bottom:12px;font-size:clamp(2.2rem,7vw,4rem);">Same brain. Your judgment.</h2>
+  <p class="reveal b" style="margin-bottom:40px;font-size:1.125rem;opacity:.86;max-width:44ch;">Disks give the brain range. Dials give it judgment. Move them and watch the handling change — try it.</p>
+  <div style="border-radius:24px;padding:28px;background:var(--ink);border:1px solid #ffffff24;">
+    <div class="dial" data-i="0"></div>
+    <div class="dial" data-i="1"></div>
+    <div class="dial" data-i="2"></div>
+    <p class="eyebrow" style="color:var(--teal-t);margin:32px 0 8px;">HOW IT WOULD HANDLE: a delayed-order complaint</p>
+    <div class="b" id="preview" style="border-radius:16px;padding:20px;font-size:1.05rem;background:#7B2FF733;border:1px solid #B999FF80;min-height:88px;"></div>
+  </div>
+</div></section>
+
+<!-- DISCOVERY -->
+<section id="discovery"><div class="wrap">
+  <p class="eyebrow" style="color:var(--violet-t);margin-bottom:12px;">HOW WE EXTRACT YOUR GENIUS</p>
+  <h2 class="reveal d" style="font-weight:800;line-height:.98;margin-bottom:12px;font-size:clamp(2.2rem,7vw,4.4rem);">We mine the winners.</h2>
+  <p class="reveal b" style="margin-bottom:48px;font-size:1.125rem;opacity:.86;max-width:50ch;">Your genius is already in your best relationships, calls, and emails — and in the moments people felt something. We find those moments, bottle why they worked, and pour them into every seat.</p>
+  <div class="grid md3" id="discovery-grid"></div>
+  <p class="reveal d" style="font-weight:800;margin-top:40px;text-align:center;font-size:clamp(1.2rem,4vw,1.9rem);"><span class="grad">The feeling becomes a feature.</span></p>
+</div></section>
+
+<!-- EXAMPLES -->
+<section style="background:var(--ink2);"><div class="wrap">
+  <p class="eyebrow" style="color:var(--teal-t);margin-bottom:12px;">GENIUS IN EVERY SEAT — LITERALLY</p>
+  <h2 class="reveal d" style="font-weight:800;line-height:.98;margin-bottom:48px;font-size:clamp(2.2rem,7vw,4.4rem);">One brain. Every role gets its move.</h2>
+  <div class="grid lg3" id="examples-grid"></div>
+</div></section>
+
+<!-- PLANS -->
+<section id="plans"><div class="wrap">
+  <p class="eyebrow" style="color:var(--magenta-t);margin-bottom:12px;">HOW WE RUN IT FOR YOU</p>
+  <h2 class="reveal d" style="font-weight:800;line-height:.98;margin-bottom:12px;font-size:clamp(2.2rem,7vw,4.4rem);">You choose how much we do.</h2>
+  <p class="reveal b" style="margin-bottom:48px;font-size:1.125rem;opacity:.86;max-width:44ch;">Same engine underneath — load the disks, set the dials, let the brain run.</p>
+  <div class="grid sm2 lg4" id="plans-grid"></div>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact" style="position:relative;overflow:hidden;background:linear-gradient(135deg,var(--violet),var(--cobalt) 55%,var(--magenta));color:#fff;">
+  <div class="wrap" style="max-width:48rem;position:relative;z-index:10;">
+    <p class="eyebrow" style="color:#fff;opacity:.9;margin-bottom:12px;">LET'S TALK</p>
+    <h2 class="reveal d" style="font-weight:800;line-height:.98;font-size:clamp(2.4rem,9vw,5rem);">Load your company's<br>genius.</h2>
+    <p class="b" style="margin-top:16px;font-size:1.125rem;opacity:.95;">Tell us what's slowing you down. We reply within a working day with a clear next step.</p>
+    <form id="contact-form" style="margin-top:36px;display:grid;gap:16px;">
+      <div class="grid sm2">
+        <div><label class="eyebrow" style="display:block;margin-bottom:6px;">YOUR NAME</label><input name="name" required></div>
+        <div><label class="eyebrow" style="display:block;margin-bottom:6px;">WORK EMAIL</label><input name="email" type="email" required></div>
+      </div>
+      <div><label class="eyebrow" style="display:block;margin-bottom:6px;">COMPANY</label><input name="company"></div>
+      <div><label class="eyebrow" style="display:block;margin-bottom:6px;">WHICH PLAN FITS?</label>
+        <select name="plan">
+          <option style="color:#000">Self-Serve</option>
+          <option style="color:#000">Guided</option>
+          <option style="color:#000" selected>Full Service</option>
+          <option style="color:#000">Pilot</option>
+          <option style="color:#000">Not sure yet</option>
+        </select>
+      </div>
+      <div><label class="eyebrow" style="display:block;margin-bottom:6px;">THE SITUATION</label><textarea name="message" rows="4" required placeholder="What's the bottleneck, and what would 'fixed' look like?"></textarea></div>
+      <button type="submit" class="btn d" style="font-weight:800;font-size:1.125rem;padding:16px 32px;border-radius:999px;margin-top:8px;justify-self:start;background:#fff;color:var(--violet);border:none;cursor:pointer;">Send it →</button>
+    </form>
+    <div class="b" style="margin-top:40px;display:flex;flex-wrap:wrap;gap:8px 32px;font-size:15px;opacity:1;">
+      <a href="mailto:hello@visone.com" class="lnk" style="font-weight:600;">hello@visone.com</a>
+      <a href="#" class="lnk">LinkedIn</a>
+      <a href="#" class="lnk">X</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="b" style="background:var(--ink);padding:40px 0;"><div class="wrap" style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
+  <span class="d" style="font-weight:800;font-size:24px;">visone<span style="color:var(--magenta-t)">.</span></span>
+  <span class="m" style="font-size:12px;opacity:.7;">© 2026 VISONE — GENIUS IN EVERY SEAT</span>
+</div></footer>
+
+<script>
+const C={violet:'#7B2FF7',cobalt:'#2E2BF5',magenta:'#FF2E92',tangerine:'#FF7A1A',teal:'#00C2B2'};
+/* lighter, readable-on-dark text tints, keyed by base hex */
+const TT={'#7B2FF7':'#B999FF','#2E2BF5':'#8AA4FF','#FF2E92':'#FF6FB0','#FF7A1A':'#FFA85C','#00C2B2':'#3FE6D4'};
+const txt=h=>TT[h]||h;
+const CONTACT_EMAIL='hello@visone.com';
+
+/* marquee */
+(function(){
+  const words=['GATHER','RECOGNIZE','DECIDE','ROUTE','DRIVE','LEARN'];
+  const cols=[C.violet,C.magenta,C.tangerine];
+  let html='';
+  for(let r=0;r<2;r++){html+='<span style="display:flex;flex-shrink:0;">';
+    words.forEach((w,j)=>{html+='<span style="padding:0 28px;display:flex;align-items:center;gap:28px;">'+w+'<span style="color:'+cols[j%3]+'">✦</span></span>';});
+    html+='</span>';}
+  document.getElementById('mq1').innerHTML=html;
+})();
+
+/* mind body soul */
+(function(){
+  const data=[
+    {t:'Mind',v:'It thinks.',b:'The engine — knowledge bank, decision engine, and the disks. It knows your business and finds the move.',c:C.cobalt},
+    {t:'Body',v:'It acts.',b:'Routing and drive — the right move reaches the right seat and executes, right inside the tools you already use.',c:C.magenta},
+    {t:'Soul',v:"It's you.",b:'Personality, culture, and voice — drawn from your best people and moments, so it sounds and acts unmistakably like you.',c:C.violet},
+  ];
+  document.getElementById('mbs').innerHTML=data.map(x=>
+    '<div class="card cardc reveal" style="--c:'+x.c+';padding:28px;">'+
+    '<h3 class="d" style="font-weight:800;font-size:clamp(1.6rem,5.5vw,2.2rem);">'+x.t+'</h3>'+
+    '<p class="d" style="font-weight:700;margin-top:4px;font-size:clamp(1rem,3.5vw,1.2rem);color:'+txt(x.c)+'">'+x.v+'</p>'+
+    '<p class="b" style="margin-top:12px;font-size:14px;opacity:.92;">'+x.b+'</p></div>').join('');
+})();
+
+/* spine */
+(function(){
+  const s=[
+    {k:'Knowledge',c:C.cobalt,d:'What the company knows — its own truth, fused with the best thinking outside it.'},
+    {k:'Recognize',c:C.magenta,d:'It watches reality against loaded circumstances, and catches the moment it appears.'},
+    {k:'Run',c:C.tangerine,d:'Fires the right actions, word tracks, and conversations — in the loaded personality.'},
+    {k:'Route',c:C.teal,d:'Resolves what · who · when · where · how — to a person or another AI.'},
+    {k:'Drive',c:C.violet,d:'It executes — into the tools you already live in. The work moves forward.'},
+  ];
+  let html='';
+  s.forEach((x,i)=>{
+    html+='<div class="flowitem" style="display:flex;flex-direction:column;">';
+    html+='<div class="card cardc reveal" style="--c:'+x.c+';padding:24px;height:100%;">'+
+      '<span class="m" style="font-size:13px;font-weight:700;color:'+txt(x.c)+'">'+String(i+1).padStart(2,'0')+'</span>'+
+      '<h3 class="d" style="font-weight:800;margin-top:4px;font-size:clamp(1.3rem,4.5vw,1.7rem);">'+x.k+'</h3>'+
+      '<p class="b" style="margin-top:8px;font-size:14px;opacity:.9;">'+x.d+'</p></div></div>';
+    if(i<s.length-1){html+='<div class="arrow"><span class="amobile">↓</span><span class="adesk">→</span></div>';}
+  });
+  document.getElementById('spine').innerHTML=html;
+  const apply=()=>{const desk=window.matchMedia('(min-width:640px)').matches;
+    document.querySelectorAll('.amobile').forEach(e=>e.style.display=desk?'none':'inline');
+    document.querySelectorAll('.adesk').forEach(e=>e.style.display=desk?'inline':'none');};
+  apply();window.addEventListener('resize',apply);
+})();
+
+/* disks */
+(function(){
+  const disks=[
+    {t:'Knowledge',b:'Sourced facts + outside best-thinking, fused into one truth.',c:C.cobalt},
+    {t:'Circumstances',b:'Situations it recognizes the instant they appear.',c:C.magenta},
+    {t:'Actions',b:'Capabilities it runs, like your best person would.',c:C.tangerine},
+    {t:'Word tracks',b:'How to handle a charged moment, in language.',c:C.violet},
+    {t:'Conversations',b:'Whole multi-turn flows — the call, the objection.',c:C.teal},
+    {t:'Personality',b:'The through-line voice that makes it one mind.',c:C.cobalt},
+  ];
+  document.getElementById('disks-grid').innerHTML=disks.map(d=>
+    '<div class="card cardc reveal" style="--c:'+d.c+';padding:28px;">'+
+    '<h3 class="d" style="font-weight:800;font-size:clamp(1.3rem,4.5vw,1.7rem);">'+d.t+'</h3>'+
+    '<p class="b" style="margin-top:8px;font-size:14px;opacity:.9;">'+d.b+'</p></div>').join('');
+  const more=['Process','Policy & rules','Playbooks','Standards','Decision criteria','Roles & seats','Org map','Skills','Personas','Relationships','Benchmarks','Competitors','Precedent','Lessons','Goals','Brand','Proof & stories','Objections','Phrases','Glossary'];
+  document.getElementById('more-disks').innerHTML=more.map(x=>'<span class="chip b">'+x+'</span>').join('');
+})();
+
+/* dials */
+(function(){
+  const meta=[
+    {label:'Tone',left:'Warm',right:'Direct'},
+    {label:'Assertiveness',left:'Suggest',right:'Own it'},
+    {label:'Speed',left:'Calm',right:'Urgent'},
+  ];
+  const vals=[0,1,1];
+  document.querySelectorAll('.dial').forEach(el=>{
+    const i=+el.dataset.i,d=meta[i];
+    el.style.marginBottom='24px';
+    el.innerHTML=
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span class="d" style="font-weight:700;font-size:1.05rem;">'+d.label+'</span><span class="m valtag" style="font-size:12px;opacity:.85;color:var(--paper);"></span></div>'+
+      '<input type="range" min="0" max="2" step="1" value="'+vals[i]+'" aria-label="'+d.label+'">'+
+      '<div style="display:flex;justify-content:space-between;margin-top:6px;" class="m"><span style="font-size:11px;opacity:.75;">'+d.left+'</span><span style="font-size:11px;opacity:.75;">'+d.right+'</span></div>';
+    el.querySelector('input').addEventListener('input',e=>{vals[i]=+e.target.value;render();});
+  });
+  function render(){
+    meta.forEach((d,i)=>{document.querySelectorAll('.valtag')[i].textContent=[d.left,'Balanced',d.right][vals[i]];});
+    const open=["I'm really sorry about the delay —","Thanks for flagging this —","Here's exactly where things stand:"][vals[0]];
+    const act=["we could get this sorted for you.","I'm getting this sorted for you now.","I've already fixed this and you're all set."][vals[1]];
+    const close=["We'll follow up soon.","I'll update you shortly.","Confirmation hits your phone in 5 minutes."][vals[2]];
+    document.getElementById('preview').textContent='“'+open+' '+act+' '+close+'”';
+  }
+  render();
+})();
+
+/* discovery */
+(function(){
+  const d=[
+    {n:'01',t:'Find the moment',b:"We don't ask what you value. We ask for the moment a customer was in awe — the time it really happened.",c:C.magenta},
+    {n:'02',t:'Bottle the why',b:'We reverse-engineer the drivers: the speed, the ownership, the calm, the over-return that created the feeling.',c:C.tangerine},
+    {n:'03',t:'Pour it into every seat',b:'The recipe loads as disks + dial settings — so any seat can recreate that awe, on purpose. The feeling becomes a feature.',c:C.violet},
+  ];
+  document.getElementById('discovery-grid').innerHTML=d.map(x=>
+    '<div class="card cardc reveal" style="--c:'+x.c+';padding:28px;">'+
+    '<span class="d" style="font-weight:800;font-size:clamp(2.2rem,7vw,3rem);color:'+txt(x.c)+'">'+x.n+'</span>'+
+    '<h3 class="d" style="font-weight:800;margin-top:4px;font-size:clamp(1.3rem,4.5vw,1.7rem);">'+x.t+'</h3>'+
+    '<p class="b" style="margin-top:8px;font-size:14px;opacity:.92;">'+x.b+'</p></div>').join('');
+})();
+
+/* examples */
+(function(){
+  const ex=[
+    {name:'Digital agency',c:C.cobalt,seats:[['Designer',"Finish the Acme homepage today — it's the only thing blocking Friday's launch."],['Account lead',"Meridian's 12% over budget — scope-call draft ready. Move Kite's work to Tom; Sara's at 110%."],['Founder',"Two retainers are renewal-risk and lowest-margin. Re-price (+18%) or release — both modeled."]]},
+    {name:'DTC brand',c:C.magenta,seats:[['Ops','Reorder dark roast today — stockout in 9 days. PO drafted, tap to approve.'],['Marketer','Kill the sampler campaign at 0.8 ROAS; shift spend to subscription at 3.2.'],['Owner',"Subscription is 62% of margin now. Double down on retention, or chase wholesale? Here's the math."]]},
+    {name:'Dental group',c:C.teal,seats:[['Front desk','Three gaps tomorrow at Westside — call these 6 recall patients first. Texts drafted.'],['Office mgr','$14k in claims aging past 30 days at Downtown — resubmit batch ready.'],['Owner','Westside utilization 61% vs 84%. Shift a provider\'s days, or fund local marketing — recommendation attached.']]},
+  ];
+  document.getElementById('examples-grid').innerHTML=ex.map(e=>
+    '<div class="reveal" style="height:100%;"><div style="border-radius:24px;padding:28px;height:100%;background:var(--ink);border:1px solid #ffffff24;">'+
+    '<div class="d" style="font-weight:800;margin-bottom:16px;font-size:clamp(1.3rem,4.5vw,1.7rem);color:'+txt(e.c)+'">'+e.name+'</div>'+
+    '<div style="display:flex;flex-direction:column;gap:14px;">'+
+    e.seats.map(s=>'<div><div class="m" style="font-size:11px;font-weight:700;margin-bottom:4px;opacity:.8;color:'+txt(e.c)+'">'+s[0].toUpperCase()+'</div><div class="b" style="font-size:14px;opacity:.95;">“'+s[1]+'”</div></div>').join('')+
+    '</div></div></div>').join('');
+})();
+
+/* plans */
+(function(){
+  const plans=[
+    {t:'Self-Serve',b:'Connect by API and build it yourself on the platform.',who:'Technical teams',c:C.teal,lead:false},
+    {t:'Guided',b:'We architect the brain with you and train your team to run it.',who:'Teams with capacity',c:C.cobalt,lead:false},
+    {t:'Full Service',b:'“Build me.” We connect, build, configure, and run it. You get the genius.',who:'Owners who want it done',c:C.violet,lead:true},
+    {t:'Pilot',b:'One decision loop, one team, ~2 weeks. Fixed price.',who:'Testing the water',c:C.magenta,lead:false},
+  ];
+  document.getElementById('plans-grid').innerHTML=plans.map(p=>{
+    const bg=p.lead?p.c:'color-mix(in srgb,'+p.c+' 17%, var(--ink2))';
+    const col=p.lead?'#fff':'var(--paper)';
+    return '<div class="card reveal" style="border-top:5px solid '+p.c+';background:'+bg+';padding:28px;display:flex;flex-direction:column;color:'+col+';">'+
+      (p.lead?'<span class="m" style="font-size:12px;font-weight:700;margin-bottom:8px;opacity:.95;">FLAGSHIP</span>':'')+
+      '<h3 class="d" style="font-weight:800;font-size:clamp(1.3rem,4.5vw,1.7rem);">'+p.t+'</h3>'+
+      '<p class="b" style="margin-top:8px;font-size:14px;flex:1;opacity:'+(p.lead?'.97':'.9')+';">'+p.b+'</p>'+
+      '<p class="m" style="font-size:12px;margin-top:16px;opacity:.85;">'+p.who.toUpperCase()+'</p></div>';
+  }).join('');
+})();
+
+/* contact -> mailto */
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  const f=e.target;
+  const subject=encodeURIComponent('Visone — '+f.plan.value+' enquiry ('+(f.company.value||f.name.value)+')');
+  const body=encodeURIComponent('Name: '+f.name.value+'\nEmail: '+f.email.value+'\nCompany: '+f.company.value+'\nPlan: '+f.plan.value+'\n\n'+f.message.value);
+  window.location.href='mailto:'+CONTACT_EMAIL+'?subject='+subject+'&body='+body;
+});
+
+/* ambient orb */
+(function(){
+  const orb=document.getElementById('orb');const hero=document.getElementById('top');
+  if(!orb||!hero)return;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let t=0,tx=.5,ty=.4,cx=.5,cy=.4;
+  hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width;ty=(e.clientY-r.top)/r.height;});
+  hero.addEventListener('touchmove',e=>{const r=hero.getBoundingClientRect();const p=e.touches[0];tx=(p.clientX-r.left)/r.width;ty=(p.clientY-r.top)/r.height;},{passive:true});
+  function loop(){t+=.006;if(!reduce){tx+=Math.sin(t)*.001;ty+=Math.cos(t*.8)*.001;}cx+=(tx-cx)*.05;cy+=(ty-cy)*.05;
+    orb.style.background='radial-gradient(40% 44% at '+(cx*100)+'% '+(cy*100)+'%, '+C.violet+', transparent 70%),radial-gradient(36% 40% at '+((1-cx)*100)+'% '+((cy+.15)*100)+'%, '+C.magenta+', transparent 70%),radial-gradient(32% 36% at '+((cx+.2)*100)+'% '+((1-cy)*100)+'%, '+C.cobalt+', transparent 70%)';
+    requestAnimationFrame(loop);}
+  loop();
+})();
+
+/* scroll reveal */
+(function(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('shown');}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
