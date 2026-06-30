@@ -274,7 +274,7 @@ const CONTACT_EMAIL='hello@visone.com';
   ];
   document.getElementById('disks-grid').innerHTML=disks.map(d=>
     '<div class="card cardc reveal" style="--c:'+d.c+';padding:28px;">'+
-    '<h3 class="d" style="font-weight:800;font-size:clamp(1.3rem,4.5vw,1.7rem);">'+d.t+'</h3>'+
+    '<h3 class="d" style="font-weight:800;font-size:clamp(1.2rem,3.6vw,1.5rem);letter-spacing:-.02em;">'+d.t+'</h3>'+
     '<p class="b" style="margin-top:8px;font-size:14px;opacity:.9;">'+d.b+'</p></div>').join('');
   const more=['Process','Policy & rules','Playbooks','Standards','Decision criteria','Roles & seats','Org map','Skills','Personas','Relationships','Benchmarks','Competitors','Precedent','Lessons','Goals','Brand','Proof & stories','Objections','Phrases','Glossary'];
   document.getElementById('more-disks').innerHTML=more.map(x=>'<span class="chip b">'+x+'</span>').join('');
